@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="60x60" href="../pics/cropme.png">
+    <title>Classes</title>
+    <link rel="stylesheet" href="./classestyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+</head>
+<body>
+<div class="slideIn">
+<div class="slideOut">
+    <a href="../2nd Bem-vindos/welcome.html" class="arrow-back"> <i class="fas fa-long-arrow-alt-left"></i></a>
+
+    <h1 class="fade1">While attending the Web Design classes I styled some of my webpages.</h1> 
+    <h1 class="fade2">Please, take a look.</h1> 
+    <h1 class="fade3">Hope you like them!</h1>
+    
+        <div class="fade4">
+        <div class="slideshow-frame">
+
+            <div class="screens">
+                <img src="../screens/images.JPG">
+              </div>
+            
+              <div class="screens">
+                <img src="../screens/triangle.JPG">
+              </div>
+            
+              <div class="screens">
+                <img src="../screens/lists.JPG" >
+              </div>
+                
+              <div class="screens">
+                <img src="../screens/BMP.JPG">
+              </div>
+            
+              <div class="screens">
+                <img src="../screens/mountains.JPG">
+              </div>
+                
+              <div class="screens">
+                <img src="../screens/coffee.JPG" >
+              </div>
+
+              <div class="screens">
+                <img src="../screens/nike.JPG">
+              </div>
+                
+              <a class="prev" onclick="plusSlides(-1)">❮</a>
+              <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+
+        <div class="slideshow-text">
+                <p id="caption"></p>
+              </div>  
+              <div class="row">
+                <div class="column">
+                  <img class="demo cursor" src="#" style="width:100%" onclick="currentSlide(1)" alt="Images class, just tried to make a nice theme that would match the images color scheme.">
+                </div>
+                <div class="column">
+                  <img class="demo cursor" src="img_5terre.jpg" style="width:100%" onclick="currentSlide(2)" alt="My main goal here was to practice some shapes and animations, didn´t care about what it looked like">
+                </div>
+                <div class="column">
+                  <img class="demo cursor" src="img_mountains.jpg" style="width:100%" onclick="currentSlide(3)" alt="Tried to make a blackboard with the black background and white cursive font">
+                </div>
+                <div class="column">
+                  <img class="demo cursor" src="img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Chose the space background and tried to make a spacial theme with the font gradient">
+                </div>
+                <div class="column">
+                  <img class="demo cursor" src="img_nature.jpg" style="width:100%" onclick="currentSlide(5)" alt="Wanted a clean look and tried to make a glass effect on the card">
+                </div>    
+                <div class="column">
+                  <img class="demo cursor" src="img_snow.jpg" style="width:100%" onclick="currentSlide(6)" alt="Chose the coffeeshoop background and tried to make a menu kind of page">
+                </div>
+                <div class="column">
+                  <img class="demo cursor" src="img_snow.jpg" style="width:100%" onclick="currentSlide(7)" alt="Wanted to try the grid and use some bold color scheme.">
+                </div>
+              </div>
+          </div>
+  </div>
+</div>
+    <script src="./slide.js"></script>
+</body>
+</html>

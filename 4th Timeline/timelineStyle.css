@@ -1,0 +1,229 @@
+/* Set a background color */
+* {
+    box-sizing: border-box;
+  }
+body {
+    background: url('../pics/color.png');
+    background-size:cover;
+    font-family:"Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  :root{
+    --clr1: #020659;
+    --clr2: #0424D9;
+    --clr3: #030A8C;
+    --clr4: #800216;
+    --clr5: #C85C80;
+}
+
+.arrow-back{
+  position:absolute;
+  top:2%;
+  left:2%;
+  font-size: 2rem;
+  color: white;
+  animation: glitch2 500ms infinite;
+}
+.arrow-back::before{
+  content:'';
+  position:absolute;
+  width:2.5rem;
+  height:2.5rem;
+  border-radius:50%;
+  background: var(--clr3);
+  top:50%;
+  left:50%;
+  transform: translate(-48%,-53%);
+  z-index:-1;
+}
+.arrow-back:hover::before{
+  background:var(--clr5);
+}
+
+
+.title{
+    color: white;
+    font-size:4rem;
+    text-align: center;
+    margin-top:1rem;
+}
+ 
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 3rem auto 5rem auto;
+    opacity:1;
+  }
+  
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    background-color: var(--clr5);
+    border-radius:5px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+
+.left::after {
+    content: '';
+    position: absolute;
+    transform:translate(-45%);
+    width: 25px;
+    height: 15px;
+    right: -106%;
+    border-radius:5px;
+    background-color: var(--clr5);
+    top: 15px;
+    z-index: -1;
+  }
+
+
+  .right::after {
+    content: '';
+    position: absolute;
+    left:100%;
+    transform:translate(55%);
+    width: 30px;
+    height: 15px;
+    right: -17px;
+    border-radius:5px;
+    background-color: var(--clr5);
+    top: 15px;
+    z-index: 1;
+    left: -16px;
+    z-index: -1;
+  }
+
+
+  .left {
+    left:-50%;
+  }
+  
+
+  .right {
+    left: 50%;
+  }
+ 
+  .content {
+    padding: 30px 30px;
+    background: linear-gradient(to bottom left, rgba(215,221,232,1),rgba(222,157,178, 0.8));
+    position: relative;
+    border-radius: 6px;
+    transition:1s all ease-out;
+    overflow: hidden;
+    width:300px;
+  }
+
+  .pic{
+    position:absolute;
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    height: inherit;
+    top:0%;
+    left:0%;
+    opacity: 0;
+    transition:all 0.8s ease; 
+  }
+
+  .pic img{
+    width:100%;
+  }
+
+  .pic:hover{
+    opacity:1;
+    cursor:none;
+    height:100%;
+  }
+
+  .content:hover{
+    transform:scale(2.3);
+    z-index:10;
+  }
+
+  .title, .timeline{
+    animation: fadeIn 2s;
+  }
+
+  @keyframes fadeIn{
+    0%{opacity:0%}
+    100%{opcaity:100%}
+  }
+
+  .today{
+      width:15%;
+      height:10px;
+      margin-bottom:2rem;
+      font-size:2rem;
+      display:flex;
+      align-items: center;
+      justify-content: space-around;
+      color: white;
+  }
+
+  .today div{
+      margin:0.5rem;
+  }
+
+
+  @media screen and (max-width: 600px) {
+    .timeline::after {
+      left: 31px;
+    }
+
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+    .container::before {
+      left: 60px;
+      border-width: 10px 10px 10px 0;
+    }
+  
+     .right::after {
+      left: 15px;
+    }
+  
+    .right {
+      left: 0%;
+    }
+
+    .left{
+      left:0%;
+    }
+
+    .left::after {
+      width: 15px;
+      left: 12%;
+    }
+
+    .right::after {
+      width: 25px;
+      left: 4%;
+    }
+
+    .right::before {
+      width: 25px;
+      left: 4%;
+    }
+
+    .content:hover{
+      transform:scale(1.2);
+    }
+
+}

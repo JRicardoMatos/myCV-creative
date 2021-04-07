@@ -1,0 +1,242 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --clr1: #020659;
+    --clr2: #0424D9;
+    --clr3: #030A8C;
+    --clr4: #800216;
+    --clr5: #C85C80;
+}
+
+.slideOut{
+    font-family:"Poppins", sans-serif;
+    background: url('../pics/classes.png');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    position:absolute;
+    top:0%;
+    left:100%;
+    animation: slideIn 0.7s ease-out forwards;
+}
+
+.slideIn{
+  width: 100vw;
+  height: 100vh;
+  background: var(--clr2);
+}
+
+@keyframes slideIn{
+  0%{left:100%}
+  100%{left:0%}
+}
+
+.arrow-back{
+    position:absolute;
+    top:2%;
+    left:2%;
+    font-size: 2rem;
+    color: white;
+    z-index:10;
+}
+.arrow-back::before{
+    content:'';
+    position:absolute;
+    width:2.5rem;
+    height:2.5rem;
+    border-radius:50%;
+    background: var(--clr3);
+    top:50%;
+    left:50%;
+    transform: translate(-48%,-53%);
+    z-index:-1;
+}
+.arrow-back:hover::before{
+    background:var(--clr5);
+}
+
+.fade1, .fade2, .fade3{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    text-align:center;
+    opacity:0;
+}
+
+
+.fade1{
+    font-size:2.5rem;
+    animation-name: fade1;
+    animation-duration:5s;
+    animation-delay: 1s;
+}
+
+@keyframes fade1{
+    0%{opacity: 0;}
+    20%,80%{opacity: 1;}
+    100%{opacity:0;}
+}
+
+.fade2{
+    font-size:2.5rem;
+    animation-name: fade2;
+    animation-delay:6s;
+    animation-duration:3s;
+}
+
+@keyframes fade2{
+    0%{opacity: 0;}
+    20%,80%{opacity: 1;}
+    100%{opacity:0;}
+}
+
+.fade3{
+    font-size:3rem;
+    animation-name: fade2;
+    animation-delay:9s;
+    animation-duration:3s;
+}
+
+@keyframes fade3{
+    0%{opacity: 0;}
+    30%,80%{opacity: 1;}
+    100%{opacity:0;}
+}
+
+.fade4{
+    opacity:0;
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:center;
+}
+
+.fade4{
+    font-size:3rem;
+    animation-name: fade4;
+    animation-delay:12s;
+    animation-duration:4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade4{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+
+
+.slideshow-frame{
+    width:75vw;
+    height:30vw;
+    border: 10px rgba(200,92,128,0.8) solid;
+    max-width: 1000px;
+    position: relative;
+    overflow:hidden;
+    border-radius:20px;
+    margin-top:2rem;
+
+}
+
+
+.screens img{
+    width: 100%;
+    object-fit: contain;
+}
+
+  .screens {
+    display: none;
+  }
+  
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(200,92,128,0.8)
+  }
+  
+  /* Container for image text */
+  .slideshow-text {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:66vw;
+    height:15vh;
+    padding: 0.7rem 1rem;
+    color: white;
+    border: 10px rgba(200,92,128,0.8) solid;
+    margin:1.5rem;
+    background: rgba(4,36,217,0.6);
+    font-size: 1rem;
+    text-align: center;
+    border-radius:20px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    display: none;
+    float: left;
+    width: 16.66%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+
+  @media only screen and (max-width:650px){
+    .slideOut h1{
+      font-size:2rem;
+    }
+
+    .slideshow-text{
+      font-size:0.7rem;
+    }
+  }

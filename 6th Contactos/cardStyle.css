@@ -1,0 +1,215 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --clr1: #020659;
+    --clr2: #0424D9;
+    --clr3: #030A8C;
+    --clr4: #800216;
+    --clr5: #C85C80;
+}
+
+.slideOut{
+    font-family:"Poppins", sans-serif;
+    background: black;
+    background-image: url('../pics/blue.png');
+    background-size: cover;
+    height: 100vh;
+    width:100vw;
+    background-position:center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    top:0%;
+    left:100%;
+    animation: slideIn 0.7s ease-out forwards;
+}
+
+.slideIn{
+    width: 100vw;
+    height: 100vh;
+    background: var(--clr2);
+  }
+  
+  @keyframes slideIn{
+    0%{left:100%}
+    100%{left:0%}
+  }
+
+.arrow-back{
+    position:absolute;
+    top:2%;
+    left:2%;
+    font-size: 2rem;
+    color: white;
+    z-index:10;
+}
+.arrow-back::before{
+    content:'';
+    position:absolute;
+    width:2.5rem;
+    height:2.5rem;
+    border-radius:50%;
+    background: var(--clr3);
+    top:50%;
+    left:50%;
+    transform: translate(-48%,-53%);
+    z-index:-1;
+}
+.arrow-back:hover::before{
+    background:var(--clr5);
+}
+
+.container{
+    width:50%;
+    max-width: 80vw;
+    height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    transform-style: preserve-3d;
+    width:1px;
+    height:1px;
+    background:linear-gradient(to top left, rgba(255,255,255,0.6),rgba(255,255,255,0.4));
+    border-radius: 5%;
+    box-shadow: 10px 10px 10px var(--clr1);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    animation: appear; 
+    animation-duration:3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes appear{
+    0%{width:1px;
+    height:1px;}
+
+    100%{width:25rem;
+        height:90vh;}
+}
+
+@keyframes fadeIn {
+    0% { opacity:0;}
+    100% {opacity:0.9;}
+}
+
+
+.me{
+    min-height:30vh;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.circle{
+    position:absolute;
+    width:10rem;
+    height:10rem;
+    overflow: hidden;
+    border-radius:50%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(21, 2, 128, 0.3));
+    z-index:1;
+    opacity:0;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+.me img{
+    opacity:0;
+    width:15rem;
+    transition: all 1s ease-out;
+    z-index:2;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+.contacts h2{
+    font-size: 0.9rem;
+    margin-left:0.5rem;
+    align-self: center;
+    color:white;
+}
+
+.contacts{
+    opacity:0;
+    flex:1;
+    width:100%;
+    height:100%;
+    margin:0rem 3rem 2rem 3rem;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    padding:0rem 1.5rem 1.5rem 1.5rem;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+.contact-info div{
+    display:flex;
+    width:85%;
+    background: var(--clr1);
+    opacity:0.8;
+    padding:0.3rem 0rem 0.3rem 1rem;
+    border-radius:30px;
+    margin:0.9rem;
+    box-shadow: 5px 5px 5px var(--clr3);
+}
+
+.contacts .fas{
+    color:#DE9DB2;
+    font-size:1.5rem;
+}
+
+.social-networks{
+    display: flex;
+    justify-content: space-evenly;
+    font-size:3.5rem;
+    color: var(--clr1);
+    opacity:0;
+    width:90%;
+    margin: 2rem 0rem 1rem 0rem;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    
+}
+
+.facebook:hover, .linkedin:hover, .github:hover{
+    transform: translateZ(100px);
+    text-shadow: 10px 10px 10px var(--clr3);
+}
+
+.social-networks a{
+    text-shadow: 2px 2px 2px var(--clr1);
+    color: var(--clr1);
+    
+}
+
+@media only screen and (max-width:940px){
+    body{ background-size:contain;}
+    .base-info h1{font-size:1.2rem;}
+    .skills{height:80%; transform: scale(0.8); margin: 0.2rem 0.2rem;}
+    .social-networks{transform: scale(0.8)}
+}
+
+@media only screen and (max-width:650px){
+    .container{
+        transform:scale(0.7);
+    }
+}

@@ -1,0 +1,99 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box
+}
+
+body{
+    font-family:"Poppins", sans-serif;
+}
+
+.background{
+    width:100vw;
+    height:100vh;
+    object-fit:cover;
+    position: absolute;
+    z-index:-1;
+}
+
+.welcome{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color:white;
+}
+
+.text{
+    width:50vw;
+    height:50vh;
+    opacity:0;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes fadeIn {
+    0% { opacity:0;}
+    100% {opacity:1;}
+}
+
+.welcome h1{
+    font-size:5rem;
+}
+
+.welcome h2{
+    font-size:1.5rem;
+}
+
+.btn{
+    background:transparent;
+    margin:0.8rem;
+    border:none;
+    font-family: "Poppins", sans-serif;
+    font-size:1rem;
+    position:relative;
+}
+
+.welcome button a{
+    text-decoration: none;
+    color: #C85C80;
+    padding:0.7rem 1rem;  
+    font-weight:700;
+    font-size:1rem;
+}
+
+.btn::after{
+    content:'';
+    position:absolute;
+    width:4rem;
+    height:1rem;
+    background: #030A8C;
+    bottom:-25%;
+    left:5%;
+    z-index:-1;
+    transform-origin: bottom left;
+    transition: all 0.5s ease-in;
+}
+
+
+.btn:hover::after{
+    width:6.2rem;
+    height:2.3rem;
+    border-radius: 10%;
+}
+
+
+@media only screen and (max-width:540px){
+    .text{
+        transform:scale(0.7);
+    }
+}
